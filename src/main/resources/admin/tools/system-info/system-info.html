@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" data-th-href="${assetsUri} + '/common/styles/_all.css'">
+    <link rel="stylesheet" type="text/css" data-th-href="${portal.assetUrl({'_path=css/status.css'})}">
+
+    <!-- Common lib -->
+    <script type="text/javascript" data-th-src="${assetsUri} + '/common/lib/_all.js'"></script>
+
+    <title data-th-text="${appName}"></title>
+</head>
+<body>
+    <header class="appbar">
+        <button class="home-button app-icon system-info-button">
+            <span class="app-title">System info</span>
+        </button>
+    </header>
+    <section class="panel">
+        <div class="toolbar browse-toolbar">
+            <button class="xp-admin-common-button action-button" data-status="server" data-th-attr="data-status-param='?status=server'">
+                <span>Server</span>
+            </button>
+            <button class="xp-admin-common-button action-button" data-status="index" data-th-attr="data-status-param='?status=index'">
+                <span>Index</span>
+            </button>
+            <button class="xp-admin-common-button action-button" data-status="jvm" data-th-attr="data-status-param='?status=jvm'">
+                <span>JVM</span>
+            </button>
+            <button class="xp-admin-common-button action-button" data-status="jvm.properties" data-th-attr="data-status-param='?status=jvm.os'">
+                <span>JVM Properties</span>
+            </button>
+            <button class="xp-admin-common-button action-button" data-status="cluster" data-th-attr="data-status-param='?status=cluster'">
+                <span>Cluster</span>
+            </button>
+            <button class="xp-admin-common-button action-button" data-status="metrics" data-th-attr="data-status-param='?status=metrics'">
+                <span>Metrics</span>
+            </button>
+            <button class="xp-admin-common-button action-button" data-status="osgi.bundle" data-th-attr="data-status-param='?status=osgi.bundle'">
+                <span>OSGI Bundles</span>
+            </button>
+            <button class="xp-admin-common-button action-button" data-status="dump" data-th-attr="data-status-param='?status=dump'">
+                <span>Dump</span>
+            </button>
+        </div>
+
+        <div id="statusContainer">
+
+            <div class="stats-container serverContainer">
+                <div class="item-data-group">
+                    <h2>Server info</h2>
+                    <ul class="data-list">
+                        <li class="list-header">Enonic XP version</li>
+                        <li data-th-text="${data.version}"></li>
+                    </ul>
+                    <ul class="data-list">
+                        <li class="list-header">Installation name</li>
+                        <li data-th-text="${data.installation}"></li>
+                    </ul>
+                    <ul class="data-list">
+                        <li class="list-header">Run mode</li>
+                        <li data-th-text="${data.runMode}"></li>
+                    </ul>
+                    <ul class="data-list">
+                        <li class="list-header">Build timestamp</li>
+                        <li data-th-text="${data.build.timestamp}"></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <!-- Configuration -->
+    <script type="text/javascript" data-th-inline="javascript">
+    /*<![CDATA[*/
+        var CONFIG = {
+            adminUrl: [[${adminUrl}]],
+            assetsUri: [[${assetsUri}]],
+            appId: [[${appId}]],
+            serviceUrl: [[${serviceUrl}]]
+        };
+    /*]]>*/
+    </script>
+
+    <!-- Append the Launcher Panel -->
+    <script type="text/javascript" data-th-src="${assetsUri} + '/apps/launcher/js/_all.js'"></script>
+
+    <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=vendor/jquery-3.1.1.min.js'})}"></script>
+    <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=js/app-main.js'})}"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,286 @@
+<section class="panel" data-th-remove="tag">
+
+    <div data-th-if="${param} == 'server'" data-th-remove="tag">
+        <div class="stats-container serverContainer">
+            <div class="item-data-group">
+                <h2>Server info</h2>
+                <ul class="data-list">
+                    <li class="list-header">Enonic XP version</li>
+                    <li data-th-text="${data.version}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Installation name</li>
+                    <li data-th-text="${data.installation}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Run mode</li>
+                    <li data-th-text="${data.runMode}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Build timestamp</li>
+                    <li data-th-text="${data.build.timestamp}"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div data-th-if="${param} == 'index'" data-th-remove="tag">
+        <div class="stats-container indexContainer">
+            <div class="item-data-group">
+                <h2>Index info</h2>
+                <ul class="data-list">
+                    <li class="list-header">Total: <span data-th-text="${data.summary.total}"></span></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Started: <span  data-th-text="${data.summary.started}"></span></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Unassigned: <span data-th-text="${data.summary.unassigned}"</li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Relocating: <span data-th-text="${data.summary.relocating}"></span></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Initializing <span data-th-text="${data.summary.initializing}"></span></li>
+                </ul>
+                <div class="indexes sub">
+                    <h4>Shards started</h4>
+                    <ul class="index-list data-list" data-th-each="node : ${data.shards.started}">
+                        <li>
+                            <div>Shard: <span data-th-text="${node.id}"></span></div>
+                            <div>Node ID: <span data-th-text="${node.nodeId}"></span> </div>
+                            <div>Node address: <span data-th-text="${node.nodeAddress}"></span> </div>
+                            <div>Type: <span data-th-text="${node.type}"></span> </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="indexes sub">
+                    <h4>Shards unassigned</h4>
+                    <ul class="index-list data-list" data-th-each="node : ${data.shards.unassigned}">
+                        <li>
+                            <div>Shard: <span data-th-text="${node.id}"></span></div>
+                            <div>Node address: <span data-th-text="${node.nodeAddress}"></span> </div>
+                            <div>Type: <span data-th-text="${node.type}"></span> </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-th-if="${param} == 'jvm'" data-th-remove="tag">
+        <div class="stats-container jvminfoContainer">
+            <div class="item-data-group">
+                <h2>JVM info</h2>
+                <ul class="data-list">
+                    <li class="list-header">Name</li>
+                    <li data-th-text="${data.info.name}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Vendor</li>
+                    <li data-th-text="${data.info.vendor}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Version</li>
+                    <li data-th-text="${data.info.version}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Start time</li>
+                    <li data-th-text="${data.info.fStartTime}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Uptime</li>
+                    <li data-th-text="${data.info.fUpTime}"></li>
+                </ul>
+            </div>
+
+            <div class="sub jvmOs item-data-group">
+                <h4>JVM/OS info</h4>
+                <ul class="data-list">
+                    <li class="list-header">OS Name</li>
+                    <li data-th-text="${data.os.name}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">OS Version</li>
+                    <li data-th-text="${data.os.version}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Architecture</li>
+                    <li data-th-text="${data.os.arch}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Number of cores</li>
+                    <li data-th-text="${data.os.cores}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Load average</li>
+                    <li data-th-text="${data.os.loadAverage}"></li>
+                </ul>
+            </div>
+
+            <div class="sub item-data-group short">
+                <h4>Threads</h4>
+                <ul class="data-list">
+                    <li class="list-header">Count</li>
+                    <li data-th-text="${data.threads.count}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Peak</li>
+                    <li data-th-text="${data.threads.peak}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Daemon Count</li>
+                    <li data-th-text="${data.threads.daemonCount}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Total Started</li>
+                    <li data-th-text="${data.threads.totalStarted}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Deadlocks</li>
+                    <li data-th-text="${data.threads.numDeadLocks}"></li>
+                </ul>
+            </div>
+
+            <div class="sub item-data-group memory">
+                <h4>Memory</h4>
+                <h5>Heap</h5>
+                <ul class="data-list">
+                    <li class="list-header">init</li>
+                    <li data-th-text="${data.memory.heap.init}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">max</li>
+                    <li data-th-text="${data.memory.heap.max}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">committed</li>
+                    <li data-th-text="${data.memory.heap.committed}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">used</li>
+                    <li data-th-text="${data.memory.heap.used}"></li>
+                </ul>
+                <h5>Non-Heap</h5>
+                <ul class="data-list">
+                    <li class="list-header">init</li>
+                    <li data-th-text="${data.memory.nonHeap.init}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">max</li>
+                    <li data-th-text="${data.memory.nonHeap.max}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">committed</li>
+                    <li data-th-text="${data.memory.nonHeap.committed}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">used</li>
+                    <li data-th-text="${data.memory.nonHeap.used}"></li>
+                </ul>
+            </div>
+
+            <div class="sub item-data-group short">
+                <h4>Garbage Collection</h4>
+                <ul class="data-list">
+                    <li class="list-header">Collection time</li>
+                    <li data-th-text="${data.gc.collectionTime}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Collection count</li>
+                    <li data-th-text="${data.gc.collectionCount}"></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div data-th-if="${param} == 'jvm.properties'" data-th-remove="tag">
+        <div class="stats-container jvmPropsContainer">
+            <div class="item-data-group">
+                <h2>JVM Properties</h2>
+                <ul class="data-list" data-th-each="prop: ${data}">
+                    <li class="list-header" data-th-text="${prop.key}"></li>
+                    <li data-th-text="${prop.value}"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div data-th-if="${param} == 'metrics'" data-th-remove="tag">
+        <div class="stats-container metricsContainer">
+            <div class="item-data-group">
+                <h2>Metrics</h2>
+                <pre data-th-text="${data}"></pre>
+            </div>
+        </div>
+    </div>
+
+    <div data-th-if="${param} == 'osgi.bundle'" data-th-remove="tag">
+        <div class="stats-container osgiBundleContainer">
+            <div class="item-data-group">
+                <h2>OSGI Bundles</h2>
+                <ul class="data-list">
+                    <li class="list-header" data-th-text="'Count ' + ${data.count}">Count</li>
+                </ul>
+                <div class="sub">
+                    <ul class="data-list" data-th-each="bundle: ${data.bundles}">
+                        <li class="list-header" data-th-text="'ID ' + ${bundle.id}">ID</li>
+                        <!--<li class="list-header">Name</li>-->
+                        <li data-th-text="${bundle.name}"></li>
+                        <li class="list-header" data-th-text="'State ' + ${bundle.state}">State</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div data-th-if="${param} == 'cluster'" data-th-remove="tag">
+        <div class="stats-container clusterContainer">
+            <div class="item-data-group">
+                <h2>Cluster info</h2>
+                <ul class="data-list">
+                    <li class="list-header">Cluster name</li>
+                    <li data-th-text="${data.name}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Cluster state</li>
+                    <li data-th-text="${data.state}" class="cluster-state" data-th-classappend="'state' + ${data.state}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Number of visible nodes</li>
+                    <li data-th-text="${data.localNode.numberOfNodesSeen}"></li>
+                </ul>
+                <ul class="data-list">
+                    <li class="list-header">Local node ID</li>
+                    <li data-th-text="${data.localNode.id}"></li>
+                </ul>
+                <div class="clusters sub">
+                    <h4>Cluster nodes</h4>
+                    <ul class="cluster-list data-list" data-th-each="node : ${data.members}">
+                        <li>
+                            <div class="master-node" data-th-text="${node.isMaster} == true ? 'Master node' : '&nbsp;'">Master node</div>
+                            <div>Node ID: <span data-th-text="${node.id}"></span> </div>
+                            <div>Host name: <span data-th-text="${node.hostName}"></span> </div>
+                            <div>Version: <span data-th-text="${node.version}"></span> </div>
+                            <div>Address: <span data-th-text="${node.address}"></span> </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-th-if="${param} == 'dump'" data-th-remove="tag">
+        <div class="stats-container dumpContainer">
+            <div class="item-data-group">
+                <h2>Dump</h2>
+                <pre data-th-text="${data.deadlocks}"></pre>
+
+                <pre data-th-text="${data.threads}"></pre>
+            </div>
+        </div>
+    </div>
+
+</section>

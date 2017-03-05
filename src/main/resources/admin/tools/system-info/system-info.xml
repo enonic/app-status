@@ -1,0 +1,7 @@
+<tool xmlns="urn:enonic:xp:model:1.0">
+  <display-name>Status info</display-name>
+  <description>Show server status and system info</description>
+  <allow>
+    <principal>role:system.admin</principal>
+  </allow>
+</tool>
