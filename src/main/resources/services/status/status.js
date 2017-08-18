@@ -1,4 +1,3 @@
-var portalLib = require('/lib/xp/portal');
 var thymeleaf = require('/lib/xp/thymeleaf');
 var httpClientLib = require('/lib/xp/http-client');
 var moment = require('/assets/momentjs/2.16.0/min/moment-with-locales.min.js');
@@ -28,8 +27,7 @@ function jvmInfo(jvminfo) {
     return jvminfo;
 }
 
-function getStatus(service, notJson) {
-    var url = portalLib.url({path: 'status/' + service, type: 'absolute'});
+function getStatus(url, notJson) {
     var response;
 
     try {
@@ -47,32 +45,38 @@ function getStatus(service, notJson) {
         return response.body;
 
     } catch (e) {
-        log.info('Failed to get status for ' + service);
+        log.info('Failed to get status for ' + url);
     }
 }
 
+function getUrl(req) {
+    var port = (req.port.toString().length > 0) ? ':' + req.port : '';
+
+    return req.scheme + '://' + req.host + port + '/status/';
+}
 
 function handlePost(req) {
     var param = req.params && req.params.service ? req.params.service: 'server';
 
     var view = resolve('status.html');
-
+    var url = getUrl(req);
+    
     var data = {};
     var response;
     if (param == 'jvm') {
-        data.info = getStatus('jvm.info');
+        data.info = getStatus(url + 'jvm.info');
         data.info = jvmInfo(data.info);
-        data.os = getStatus('jvm.os');
-        data.gc = getStatus('jvm.gc');
-        data.memory = getStatus('jvm.memory');
-        data.threads = getStatus('jvm.threads');
+        data.os = getStatus(url + 'jvm.os');
+        data.gc = getStatus(url + 'jvm.gc');
+        data.memory = getStatus(url + 'jvm.memory');
+        data.threads = getStatus(url + 'jvm.threads');
     } else if (param == 'metrics') {
-        data = JSON.stringify(getStatus(param), null, 4);
+        data = JSON.stringify(getStatus(url + param), null, 4);
     } else if (param == 'dump') {
-        data.deadlocks = getStatus('dump.deadlocks', true);
-        data.threads = getStatus('dump.threads', true);
+        data.deadlocks = getStatus(url + 'dump.deadlocks', true);
+        data.threads = getStatus(url + 'dump.threads', true);
     } else {
-        data = getStatus(param);
+        data = getStatus(url + param);
     }
 
     var params = {

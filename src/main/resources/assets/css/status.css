@@ -13,6 +13,11 @@ section.panel {
 .appbar .home-button:hover.system-info-button.app-icon, .appbar .home-button.system-info-button {
     background: transparent url(../img/system-info.svg) no-repeat 0 10px;
     background-size: 28px 28px;
+    border: none;
+}
+
+.appbar .app-title {
+    margin-left: 30px;
 }
 
 .jvminfoContainer .item-data-group .data-list {
