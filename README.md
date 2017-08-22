@@ -20,16 +20,23 @@ Navigate through the different status views with the buttons at the top of the p
 
 | App Version   | XP version |
 | ------------- | ---------- |
-| 1.0.0 | 6.9.0 |
+| 1.0.0 | 6.9.0 | [Download](http://repo.enonic.com/public/com/enonic/app/status/1.0.0/status-1.0.0.jar) |
+| 1.0.1 | 6.11.0 | [Download](http://repo.enonic.com/public/com/enonic/app/status/1.0.1/status-1.0.1.jar) |
 
 
 ## Requirements
 
-Enonic XP must be installed and running. See the
+* Enonic XP must be installed and running. See the
 [XP installation documentation](http://xp.readthedocs.org/en/stable/getstarted/index.html).
 
 
-
+* Virtual host must be configured to open /status url on the host server. For example, for enonic.com/status:
+```
+mapping.status.host = enonic.com
+mapping.status.source = /status
+mapping.status.target = /status
+mapping.status.userStore = system
+``
 
 ### TODOS
 
