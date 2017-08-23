@@ -5,9 +5,8 @@ Index, Cluster state, JVM information, JVM properties and more.
 
 # Security Warning
 
-Version 1 of this app fetches data from `/status`, which means that this page must be exposed in vhost in order to work on a server.  This is potentially a security hole, because there are a lot of information on the `/status` pages that may be used to hack the system.
+Version 1 of this app fetches data from `/status`, which means that this page must be exposed in vhost in order to work on a server.  This is potentially a security hole, because there are a lot of information on the `/status` pages that may be used to hack the system.  Because of this, the Status App should only be used in controlled environments, where the network makes certain that the `/status` page can not be accessed from the outside.
 
-Because of this, the Status App should only be used in controlled environments, where the network makes certain that the `/status` page can not be accessed from the outside.
 Enonic is working on a version 2 of the app, with a very different archtecture that fetches the data in a secure way.
 
 ## Installation
