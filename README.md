@@ -17,7 +17,7 @@ Find this app in the Enonic Market tab and click "Install".
 Alternatively, you can download this repo and build the app with `./gradlew build`
 in your terminal. Them move the JAR file to your XP installation's "deploy" folder.
 
-* Virtual host must be configured to open /status url on the host server. For example, for enonic.com/status:
+If this app is run in a server environment, a virtual host mapping must be configured to open /status url on the host server. For example, for enonic.com/status:
 ```
 mapping.status.host = enonic.com
 mapping.status.source = /status
