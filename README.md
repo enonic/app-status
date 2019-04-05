@@ -36,6 +36,7 @@ Navigate through the different status views with the buttons at the top of the p
 | ------------- | ---------- | -------- |
 | 1.0.0 | 6.9.0  | [Download](http://repo.enonic.com/public/com/enonic/app/status/1.0.0/status-1.0.0.jar) |
 | 1.0.1 | 6.11.0 | [Download](http://repo.enonic.com/public/com/enonic/app/status/1.0.1/status-1.0.1.jar) |
+| 2.0.0 | 7.0.0  | [Download](http://repo.enonic.com/public/com/enonic/app/status/2.0.0/status-2.0.0.jar) |
 
 
 ## Requirements

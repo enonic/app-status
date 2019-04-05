@@ -1,6 +1,7 @@
 var portalLib = require('/lib/xp/portal');
-var thymeleaf = require('/lib/xp/thymeleaf');
-var httpClientLib = require('/lib/xp/http-client');
+var thymeleaf = require('/lib/thymeleaf');
+var httpClientLib = require('/lib/http-client');
+var adminLib = require('/lib/xp/admin');
 var timestamp = Date.now();
 
 function getStatus(url) {
@@ -17,9 +18,7 @@ function getStatus(url) {
 }
 
 function getUrl(req) {
-    var port = (req.port.toString().length > 0) ? ':' + req.port : '';
-    
-    return req.scheme + '://' + req.host + port + '/status/';
+    return req.scheme + '://' + req.host + ':' + 2609 + '/';
 }
 
 function handleGet(req) {
@@ -28,13 +27,18 @@ function handleGet(req) {
     var icon = portalLib.assetUrl({path: '/img/system-info.svg'});
 
     var url = getUrl(req);
-    
+
     var data = getStatus(url);
     data = JSON.parse(data.body);
-    
+
     var params = {
         adminUrl: portalLib.url({path: "/admin"}),
-        assetsUri: portalLib.url({path: "/admin/assets/" + timestamp}),
+        assetsUri: portalLib.assetUrl({
+            path: ''
+        }),
+        adminAssetsUri: adminLib.getAssetsUri(),
+        launcherPath: adminLib.getLauncherPath(),
+        launcherUrl: adminLib.getLauncherUrl(),
         appId: 'system-info',
         appName: 'System info',
         appIcon: icon,

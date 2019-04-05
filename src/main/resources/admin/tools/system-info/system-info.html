@@ -7,11 +7,12 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" data-th-href="${assetsUri} + '/common/styles/_all.css'">
+    <link rel="stylesheet" type="text/css" data-th-href="${assetsUri} + '/admin/common/styles/_all.css'">
     <link rel="stylesheet" type="text/css" data-th-href="${portal.assetUrl({'_path=css/status.css'})}">
 
     <!-- Common lib -->
-    <script type="text/javascript" data-th-src="${assetsUri} + '/common/lib/_all.js'"></script>
+    <script type="text/javascript" data-th-src="${assetsUri} + '/admin/common/lib/_all.js'"></script>
+    <script type="text/javascript" data-th-src="${assetsUri} + '/admin/common/js/_all.js'"></script>
 
     <title data-th-text="${appName}"></title>
 </head>
@@ -85,13 +86,14 @@
             adminUrl: [[${adminUrl}]],
             assetsUri: [[${assetsUri}]],
             appId: [[${appId}]],
-            serviceUrl: [[${serviceUrl}]]
+            serviceUrl: [[${serviceUrl}]],
+            launcherUrl: [[${launcherUrl}]]
         };
     /*]]>*/
     </script>
 
     <!-- Append the Launcher Panel -->
-    <script type="text/javascript" data-th-src="${assetsUri} + '/apps/launcher/js/_all.js'"></script>
+    <script type="text/javascript" data-th-src="${launcherPath}" async></script>
 
     <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=vendor/jquery-3.1.1.min.js'})}"></script>
     <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=js/app-main.js'})}"></script>
