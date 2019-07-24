@@ -32,4 +32,4 @@ Navigate through the different status views with the buttons at the top of the p
 ## Requirements
 
 * Enonic XP must be installed and running. See the
-[XP installation documentation](http://xp.readthedocs.org/en/stable/getstarted/index.html).
+[Getting started](https://developer.enonic.com/start) guide.
