@@ -1,6 +1,6 @@
-var thymeleaf = require('/lib/xp/thymeleaf');
-var httpClientLib = require('/lib/xp/http-client');
-var moment = require('/assets/momentjs/2.16.0/min/moment-with-locales.min.js');
+var thymeleaf = require('/lib/thymeleaf');
+var httpClientLib = require('/lib/http-client');
+var moment = require('/assets/momentjs/2.24.0/min/moment-with-locales.min.js');
 
 function getUptime(ms) {
 
@@ -50,17 +50,15 @@ function getStatus(url, notJson) {
 }
 
 function getUrl(req) {
-    var port = (req.port.toString().length > 0) ? ':' + req.port : '';
-
-    return req.scheme + '://' + req.host + port + '/status/';
+    return req.scheme + '://' + req.host + ':' + 2609 + '/';
 }
 
 function handlePost(req) {
-    var param = req.params && req.params.service ? req.params.service: 'server';
+    var param = req.params && req.params.service ? req.params.service : 'server';
 
     var view = resolve('status.html');
     var url = getUrl(req);
-    
+
     var data = {};
     var response;
     if (param == 'jvm') {
