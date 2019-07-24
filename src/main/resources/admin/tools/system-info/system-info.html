@@ -17,11 +17,12 @@
     <title data-th-text="${appName}"></title>
 </head>
 <body>
-    <header class="appbar">
-        <button class="home-button app-icon system-info-button">
-            <span class="app-title">System info</span>
-        </button>
-    </header>
+    <div class="appbar">
+        <div class="home-button app-icon system-info-button">
+            <img class="app-icon" data-th-src="${portal.assetUrl({'_path=img/system-info.svg'})}">
+            <span class="app-name">System info</span>
+        </div>
+    </div>
     <section class="panel">
         <div class="toolbar browse-toolbar">
             <button class="xp-admin-common-button action-button" data-status="server" data-th-attr="data-status-param='?status=server'">
@@ -95,7 +96,7 @@
     <!-- Append the Launcher Panel -->
     <script type="text/javascript" data-th-src="${launcherPath}" async></script>
 
-    <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=vendor/jquery-3.1.1.min.js'})}"></script>
+    <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=vendor/jquery-3.4.1.min.js'})}"></script>
     <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=js/app-main.js'})}"></script>
 
 

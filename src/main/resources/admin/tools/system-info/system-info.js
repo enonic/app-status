@@ -24,7 +24,6 @@ function getUrl(req) {
 function handleGet(req) {
 
     var view = resolve('system-info.html');
-    var icon = portalLib.assetUrl({path: '/img/system-info.svg'});
 
     var url = getUrl(req);
 
@@ -36,12 +35,10 @@ function handleGet(req) {
         assetsUri: portalLib.assetUrl({
             path: ''
         }),
-        adminAssetsUri: adminLib.getAssetsUri(),
         launcherPath: adminLib.getLauncherPath(),
         launcherUrl: adminLib.getLauncherUrl(),
         appId: 'system-info',
         appName: 'System info',
-        appIcon: icon,
         data: data,
         serviceUrl: portalLib.serviceUrl({service: 'status'})
 

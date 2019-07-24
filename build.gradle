@@ -8,26 +8,22 @@ app {
     name = project.appName
     displayName = 'Status Info'
     vendorName = 'Enonic'
-    vendorUrl = 'http://enonic.com'
+    vendorUrl = 'https://enonic.com'
     systemVersion = "${xpVersion}"
 }
 
 dependencies {
-    compile "com.enonic.xp:core-api:${xpVersion}"
-    compile "com.enonic.xp:portal-api:${xpVersion}"
     include "com.enonic.xp:lib-content:${xpVersion}"
     include "com.enonic.xp:lib-admin:${xpVersion}"
     include "com.enonic.xp:lib-portal:${xpVersion}"
     include "com.enonic.lib:lib-admin-ui:${libAdminUiVersion}"
-    include 'com.enonic.lib:lib-thymeleaf:2.0.0-B1'
-    include 'com.enonic.lib:lib-http-client:2.0.0-B1'
-    webjar "org.webjars:momentjs:2.16.0"
+    include 'com.enonic.lib:lib-thymeleaf:2.0.0'
+    include 'com.enonic.lib:lib-http-client:2.0.0'
+    webjar "org.webjars:momentjs:2.24.0"
 }
 
 repositories {
     mavenLocal()
     mavenCentral()
-    maven {
-        url 'http://repo.enonic.com/public'
-    }
+    xp.enonicRepo()
 }

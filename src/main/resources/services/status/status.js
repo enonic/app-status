@@ -1,6 +1,6 @@
 var thymeleaf = require('/lib/thymeleaf');
 var httpClientLib = require('/lib/http-client');
-var moment = require('/assets/momentjs/2.16.0/min/moment-with-locales.min.js');
+var moment = require('/assets/momentjs/2.24.0/min/moment-with-locales.min.js');
 
 function getUptime(ms) {
 
