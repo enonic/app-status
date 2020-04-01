@@ -1,6 +1,7 @@
 var thymeleaf = require('/lib/thymeleaf');
 var httpClientLib = require('/lib/http-client');
 var moment = require('/assets/momentjs/2.24.0/min/moment-with-locales.min.js');
+var getUrl = require('/lib/util').getUrl;
 
 function getUptime(ms) {
 
@@ -47,10 +48,6 @@ function getStatus(url, notJson) {
     } catch (e) {
         log.info('Failed to get status for ' + url);
     }
-}
-
-function getUrl(req) {
-    return req.scheme + '://' + req.host + ':' + 2609 + '/';
 }
 
 function handlePost(req) {
