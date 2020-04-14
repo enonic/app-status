@@ -2,6 +2,7 @@ var portalLib = require('/lib/xp/portal');
 var thymeleaf = require('/lib/thymeleaf');
 var httpClientLib = require('/lib/http-client');
 var adminLib = require('/lib/xp/admin');
+var getUrl = require('/lib/util').getUrl;
 var timestamp = Date.now();
 
 function getStatus(url) {
@@ -15,10 +16,6 @@ function getStatus(url) {
     });
 
     return response;
-}
-
-function getUrl(req) {
-    return req.scheme + '://' + req.host + ':' + 2609 + '/';
 }
 
 function handleGet(req) {
