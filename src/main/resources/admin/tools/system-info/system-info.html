@@ -5,15 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- Styles -->
-    <link rel="stylesheet" type="text/css" data-th-href="${assetsUri} + '/admin/common/styles/_all.css'">
+    <link rel="stylesheet" type="text/css" data-th-href="${assetsUri} + '/admin/common/styles/lib.css'">
     <link rel="stylesheet" type="text/css" data-th-href="${portal.assetUrl({'_path=css/status.css'})}">
-
-    <!-- Common lib -->
-    <script type="text/javascript" data-th-src="${assetsUri} + '/admin/common/lib/_all.js'"></script>
-    <script type="text/javascript" data-th-src="${assetsUri} + '/admin/common/js/_all.js'"></script>
-
+    <script type="text/javascript" data-th-src="${assetsUri} + '/admin/common/js/lib.js'" defer></script>
     <title data-th-text="${appName}"></title>
 </head>
 <body>
@@ -47,9 +41,7 @@
                 <span>Dump</span>
             </button>
         </div>
-
         <div id="statusContainer">
-
             <div class="stats-container serverContainer">
                 <div class="item-data-group">
                     <h2>Server info</h2>
@@ -71,32 +63,22 @@
                     </ul>
                 </div>
             </div>
-
         </div>
-
-
     </section>
-
-    <!-- Configuration -->
     <script type="text/javascript" data-th-inline="javascript">
     /*<![CDATA[*/
         var CONFIG = {
             adminUrl: [[${adminUrl}]],
-            assetsUri: [[${assetsUri}]],
             appId: [[${appId}]],
-            serviceUrl: [[${serviceUrl}]],
-            launcherUrl: [[${launcherUrl}]]
+            assetsUri: [[${assetsUri}]],
+            launcherUrl: [[${launcherUrl}]],
+            services: {}, // Workaround for i18nUrl BUG
+            serviceUrl: [[${serviceUrl}]]
         };
     /*]]>*/
     </script>
-
-    <!-- Append the Launcher Panel -->
     <script type="text/javascript" data-th-src="${launcherPath}" async></script>
-
     <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=vendor/jquery-3.4.1.min.js'})}"></script>
     <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=js/app-main.js'})}"></script>
-
-
-
 </body>
 </html>
