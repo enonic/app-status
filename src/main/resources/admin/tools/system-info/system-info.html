@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" type="text/css" data-th-href="${assetsUri} + '/admin/common/styles/lib.css'">
     <link rel="stylesheet" type="text/css" data-th-href="${portal.assetUrl({'_path=css/status.css'})}">
+    <link rel="stylesheet" type="text/css" data-th-href="${assetsUri} + '/admin/common/styles/lib.css'">
+<!--
+    Not used
     <script type="text/javascript" data-th-src="${assetsUri} + '/admin/common/js/lib.js'" defer></script>
+-->
     <title data-th-text="${appName}"></title>
 </head>
 <body>
@@ -68,12 +71,12 @@
     <script type="text/javascript" data-th-inline="javascript">
     /*<![CDATA[*/
         var CONFIG = {
-            adminUrl: [[${adminUrl}]],
-            appId: [[${appId}]],
-            assetsUri: [[${assetsUri}]],
+            //adminUrl: [[${adminUrl}]],
+            //appId: [[${appId}]],
+            //assetsUri: [[${assetsUri}]],
             launcherUrl: [[${launcherUrl}]],
             services: {}, // Workaround for i18nUrl BUG
-            serviceUrl: [[${serviceUrl}]]
+            serviceUrl: [[${serviceUrl}]] // Used in app-main.js
         };
     /*]]>*/
     </script>
