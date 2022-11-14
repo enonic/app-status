@@ -17,7 +17,7 @@ dependencies {
     include "com.enonic.xp:lib-admin:${xpVersion}"
     include "com.enonic.xp:lib-portal:${xpVersion}"
     include "com.enonic.lib:lib-admin-ui:${libAdminUiVersion}"
-    include 'com.enonic.lib:lib-thymeleaf:2.0.0'
+    include 'com.enonic.lib:lib-thymeleaf:2.0.2'
     include 'com.enonic.lib:lib-http-client:3.1.0'
     webjar "org.webjars:momentjs:2.29.4"
 }
