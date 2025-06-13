@@ -20,16 +20,6 @@ Alternatively, you can download this repo and build the app with `./gradlew buil
 Once this app is installed, you will see "Status info" admin tool on the Launcher panel inside the XP admin.
 Navigate through the different status views with the buttons at the top of the page.
 
-## Releases and compatibility
-
-| App Version   | XP version | Download |
-| ------------- | ---------- | -------- |
-| 1.0.0 | 6.9.0  | [Download](http://repo.enonic.com/public/com/enonic/app/status/1.0.0/status-1.0.0.jar) |
-| 1.0.1 | 6.11.0 | [Download](http://repo.enonic.com/public/com/enonic/app/status/1.0.1/status-1.0.1.jar) |
-| 2.0.0 | 7.0.0  | [Download](http://repo.enonic.com/public/com/enonic/app/status/2.0.0/status-2.0.0.jar) |
-| 2.1.0 | 7.0.0  | [Download](http://repo.enonic.com/public/com/enonic/app/status/2.1.0/status-2.1.0.jar) |
-
-
 ## Requirements
 
 * Enonic XP must be installed and running. See the
