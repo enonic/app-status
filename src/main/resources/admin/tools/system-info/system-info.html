@@ -71,16 +71,11 @@
     <script type="text/javascript" data-th-inline="javascript">
     /*<![CDATA[*/
         var CONFIG = {
-            //adminUrl: [[${adminUrl}]],
-            //appId: [[${appId}]],
-            //assetsUri: [[${assetsUri}]],
-            launcherUrl: [[${launcherUrl}]],
             services: {}, // Workaround for i18nUrl BUG
             serviceUrl: [[${serviceUrl}]] // Used in app-main.js
         };
     /*]]>*/
     </script>
-    <script type="text/javascript" data-th-src="${launcherPath}" async></script>
     <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=vendor/jquery-3.4.1.min.js'})}"></script>
     <script type="text/javascript" data-th-src="${portal.assetUrl({'_path=js/app-main.js'})}"></script>
 </body>

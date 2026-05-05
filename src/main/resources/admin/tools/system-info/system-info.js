@@ -1,9 +1,7 @@
 var portalLib = require('/lib/xp/portal');
 var thymeleaf = require('/lib/thymeleaf');
 var httpClientLib = require('/lib/http-client');
-var adminLib = require('/lib/xp/admin');
 var getUrl = require('/lib/util').getUrl;
-var timestamp = Date.now();
 
 function getStatus(url) {
 
@@ -28,12 +26,9 @@ function handleGet(req) {
     data = JSON.parse(data.body);
 
     var params = {
-        adminUrl: portalLib.url({path: "/admin"}),
         assetsUri: portalLib.assetUrl({
             path: ''
         }),
-        launcherPath: adminLib.getLauncherPath(),
-        launcherUrl: adminLib.getLauncherUrl(),
         appId: 'system-info',
         appName: 'System info',
         data: data,
