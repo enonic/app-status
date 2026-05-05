@@ -1,0 +1,11 @@
+kind: "AdminTool"
+title:
+  text: "Status info"
+description:
+  text: "Show server status and system info"
+allow:
+  - "role:system.admin"
+apis:
+  - "admin:extension"
+  - "admin:event"
+  - "admin:status"

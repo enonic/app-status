@@ -1,0 +1,9 @@
+[versions]
+thymeleaf  = "3.0.0-SNAPSHOT"
+http-client = "3.2.2"
+admin-ui   = "5.2.0-B1"
+
+[libraries]
+lib-thymeleaf   = { module = "com.enonic.lib:lib-thymeleaf",   version.ref = "thymeleaf" }
+lib-http-client = { module = "com.enonic.lib:lib-http-client", version.ref = "http-client" }
+lib-admin-ui    = { module = "com.enonic.lib:lib-admin-ui",    version.ref = "admin-ui" }
