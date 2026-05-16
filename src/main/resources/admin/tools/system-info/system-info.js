@@ -1,4 +1,5 @@
 var portalLib = require('/lib/xp/portal');
+var assetLib = require('/lib/enonic/asset');
 var thymeleaf = require('/lib/thymeleaf');
 var httpClientLib = require('/lib/http-client');
 var getUrl = require('/lib/util').getUrl;
@@ -26,7 +27,7 @@ function handleGet(req) {
     data = JSON.parse(data.body);
 
     var params = {
-        assetsUri: portalLib.assetUrl({
+        assetsUri: assetLib.assetUrl({
             path: ''
         }),
         appId: 'system-info',
