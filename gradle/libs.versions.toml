@@ -1,6 +1,6 @@
 [versions]
 thymeleaf  = "3.0.0-SNAPSHOT"
-http-client = "3.2.2"
+http-client = "4.0.0-SNAPSHOT"
 admin-ui   = "5.2.0-B1"
 
 [libraries]
