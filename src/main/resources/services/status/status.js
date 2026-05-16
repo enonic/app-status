@@ -1,6 +1,6 @@
 var thymeleaf = require('/lib/thymeleaf');
 var httpClientLib = require('/lib/http-client');
-var moment = require('/assets/momentjs/2.24.0/min/moment-with-locales.min.js');
+var moment = require('/assets/momentjs/2.30.1-1/moment-with-locales.min.js');
 var getUrl = require('/lib/util').getUrl;
 
 function getUptime(ms) {
@@ -70,6 +70,8 @@ function handlePost(req) {
     } else if (param == 'dump') {
         data.deadlocks = getStatus(url + 'dump.deadlocks', true);
         data.threads = getStatus(url + 'dump.threads', true);
+    } else if (param == 'cluster') {
+        data = getStatus(url + 'cluster.elasticsearch');
     } else {
         data = getStatus(url + param);
     }
