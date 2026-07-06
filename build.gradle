@@ -11,7 +11,7 @@ dependencies {
     include libs.lib.admin.ui
     include libs.lib.thymeleaf
     include libs.lib.http.client
-    include "com.enonic.lib:lib-asset:2.0.0"
+    include "com.enonic.lib:lib-asset:2.0.1"
     webjar "org.webjars:momentjs:2.30.1-1"
 }
 
