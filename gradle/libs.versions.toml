@@ -1,5 +1,5 @@
 [versions]
-thymeleaf  = "3.0.0"
+thymeleaf  = "3.0.1"
 http-client = "4.0.1"
 admin-ui   = "5.2.0"
 
